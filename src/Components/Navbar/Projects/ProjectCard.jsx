@@ -1,5 +1,6 @@
 import React from "react";
 import bannerImg from "../../../../public/project.jpg";
+
 const ProjectCard = ({ title,main }) => {
   return (
     <div className="p-3 md:p-6 flex flex-col w-80 bg-[#0c0e19] shadow-slate-900 rounded-2xl">
