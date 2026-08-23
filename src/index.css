@@ -1,3 +1,115 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  body {
+    @apply bg-slate-950 text-slate-100 overflow-x-hidden;
+  }
+}
+
+/* CSS Theme Variables */
+:root {
+  --accent-start: #818cf8; /* Indigo-400 */
+  --accent-end: #22d3ee;   /* Cyan-400 */
+  --accent-solid: #6366f1; /* Indigo-500 */
+  --accent-glow: rgba(99, 102, 241, 0.4);
+}
+
+:root.theme-emerald {
+  --accent-start: #34d399; /* Emerald-400 */
+  --accent-end: #2dd4bf;   /* Teal-400 */
+  --accent-solid: #10b981; /* Emerald-500 */
+  --accent-glow: rgba(16, 185, 129, 0.4);
+}
+
+:root.theme-rose {
+  --accent-start: #fb7185; /* Rose-400 */
+  --accent-end: #f43f5e;   /* Rose-500 */
+  --accent-solid: #f43f5e; /* Rose-500 */
+  --accent-glow: rgba(244, 63, 94, 0.4);
+}
+
+:root.theme-violet {
+  --accent-start: #a78bfa; /* Violet-400 */
+  --accent-end: #d946ef;   /* Fuchsia-500 */
+  --accent-solid: #8b5cf6; /* Violet-500 */
+  --accent-glow: rgba(139, 92, 246, 0.4);
+}
+
+:root.theme-amber {
+  --accent-start: #fbbf24; /* Amber-400 */
+  --accent-end: #f97316;   /* Orange-500 */
+  --accent-solid: #f59e0b; /* Amber-500 */
+  --accent-glow: rgba(245, 158, 11, 0.4);
+}
+
+/* Custom Glassmorphism Utility */
+.glass {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-nav {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Dynamic Accent Styles */
+.text-accent-gradient {
+  background: linear-gradient(to right, var(--accent-start), var(--accent-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-accent-gradient {
+  background: linear-gradient(to right, var(--accent-start), var(--accent-end));
+}
+
+.bg-accent-solid {
+  background-color: var(--accent-solid);
+}
+
+.bg-accent-solid-hover:hover {
+  background-color: var(--accent-start);
+}
+
+.border-accent {
+  border-color: var(--accent-solid);
+}
+
+.border-accent-dim {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.text-accent {
+  color: var(--accent-start);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 25px var(--accent-glow);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.hover-glow-accent:hover {
+  box-shadow: 0 0 25px var(--accent-glow);
+  border-color: var(--accent-solid);
+}
+
+.focus-accent:focus {
+  border-color: var(--accent-solid);
+  box-shadow: 0 0 0 1px var(--accent-solid);
+}
+
+.accent-glow-bg {
+  box-shadow: 0 0 25px var(--accent-glow);
+}
