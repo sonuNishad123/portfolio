@@ -19,6 +19,7 @@ const Contact = () => {
       email: data.email,
       message: data.message,
     };
+
     try {
       await axios.post("https://getform.io/f/axojxerb", userInfo);
       toast.success("Your message has been sent successfully!");
@@ -32,7 +33,10 @@ const Contact = () => {
   };
 
   return (
-    <section id="Contact" className="py-20 px-6 md:px-12 max-w-6xl mx-auto text-white">
+    <section
+      id="Contact"
+      className="py-20 px-6 md:px-12 max-w-6xl mx-auto text-white"
+    >
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-5xl font-black tracking-tight text-accent-gradient inline-block">
           Get In Touch
@@ -56,7 +60,10 @@ const Contact = () => {
 
           {/* Full Name */}
           <div className="flex flex-col space-y-2">
-            <label htmlFor="name" className="text-sm font-semibold text-slate-300">
+            <label
+              htmlFor="name"
+              className="text-sm font-semibold text-slate-300"
+            >
               Full Name
             </label>
             <input
@@ -79,7 +86,10 @@ const Contact = () => {
 
           {/* Email Address */}
           <div className="flex flex-col space-y-2">
-            <label htmlFor="email" className="text-sm font-semibold text-slate-300">
+            <label
+              htmlFor="email"
+              className="text-sm font-semibold text-slate-300"
+            >
               Email Address
             </label>
             <input
@@ -108,7 +118,10 @@ const Contact = () => {
 
           {/* Message */}
           <div className="flex flex-col space-y-2">
-            <label htmlFor="message" className="text-sm font-semibold text-slate-300">
+            <label
+              htmlFor="message"
+              className="text-sm font-semibold text-slate-300"
+            >
               Message
             </label>
             <textarea
@@ -144,4 +157,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
